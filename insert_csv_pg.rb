@@ -11,7 +11,7 @@ begin
     connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)    
     puts 'connected'
     #query= connection.exec("\\copy univs FROM '/home/yogambo/university.csv' DELIMITER ',' CSV HEADER;");
-    CSV.foreach('/home/yogambo/university.csv', :headers => true) do |csv_obj|
+    CSV.foreach('university.csv', :headers => true) do |csv_obj|
        connection.exec("INSERT into univs (UNITID, OPEID, opeid6, INSTNM, CITY,STABBR,INSTURL) VALUES ('"+csv_obj['UNITID']+"','"+csv_obj['OPEID']+"','"+csv_obj['opeid6']+"','"+csv_obj['INSTNM']+"','"+csv_obj['CITY']+"','"+csv_obj['STABBR']+"','"+csv_obj['INSTURL']+"');");
     end 
     puts "completed insertion sucessfully"

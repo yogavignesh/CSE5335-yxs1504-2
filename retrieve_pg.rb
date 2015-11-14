@@ -10,7 +10,7 @@ uri = URI.parse('postgres://zhqqkzyehbvsah:1UtTG9XdHEvsaFFi602V2AKl63@ec2-107-21
 begin 
     connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)    
     puts 'connected...'
-    puts "Enter the primary Key value"
+    puts "Enter the primary Key value (UNITID)"
     primary_key=gets
     query_result= connection.exec("SELECT * from univs where UNITID='"+primary_key+"';");
     if unless query_result.nil? or query_result == 0
@@ -29,6 +29,7 @@ begin
 	    end
     end   
     connection.close
+    puts 'Connection closed'
 end
 
 

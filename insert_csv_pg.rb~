@@ -5,7 +5,7 @@ require 'uri'
 require 'pg'
 
 
-uri = URI.parse('postgres://zhqqkzyehbvsah:1UtTG9XdHEvsaFFi602V2AKl63@ec2-107-21-219-235.compute-1.amazonaws.com:5432/dc72999lmnqk8')
+uri = URI.parse('postgres://mlwtmupwzjrpal:VxrFpS6LWDFs4r1wfVD90MmWao@ec2-107-21-219-201.compute-1.amazonaws.com:5432/d92a8hfnv29fdc')
 
 begin 
     connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)    

@@ -31,18 +31,18 @@ begin
     if unless query_result.nil? or query_result == 0
 	    puts "The key results are :\n"
     	    puts "UNITID | OPEID | opeid6 | INSTNM | CITY | STABBR | INSTURL"
-	    query_result.each{
-		unitID=query_result[0]['unitid']
-		opeID=query_result[0]['opeid']
-		opeid6=query_result[0]['opeid6']
-		insTNM=query_result[0]['instnm']
-		city=query_result[0]['city']
-		state=query_result[0]['stabbr']
-		instURL=query_result[0]['insturl']		
+	    query_result.each do |result|
+		unitID=result['unitid']
+		opeID=result['opeid']
+		opeid6=result['opeid6']
+		insTNM=result['instnm']
+		city=result['city']
+		state=result['stabbr']
+		instURL=result['insturl']		
  		puts "#{unitID} | #{opeID} | #{opeid6} | #{insTNM} | #{city} | #{state} | #{instURL}"
-	    }
 	    end
-    end   
+    end 
+    end  
     connection.close
     puts 'Connection closed'
 end

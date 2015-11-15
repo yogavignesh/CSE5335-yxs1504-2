@@ -11,9 +11,9 @@ begin
     puts "Enter the Key value (UNITID)"
     primary_key=gets
     if primary_key.strip! == nil
-    query=redisConn.get(primary_key)
+        query=redisConn.get(primary_key)
     else
-    query=redisConn.get(primary_key)
+        query=redisConn.get(primary_key)
     end
     if unless query.nil? or query == 0  
 	 puts "Retrieve success"   

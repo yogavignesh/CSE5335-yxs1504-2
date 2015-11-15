@@ -4,7 +4,7 @@ require 'mongo'
 begin
 	client = Mongo::Client.new([ 'ds053794.mongolab.com:53794' ],:database =>'heroku_sbddk600',:user=>'heroku_sbddk600',:password=>'qlc03tq84elf3uptbsr49i1fi2');
 	puts "connected..."
-        puts "Enter the Key value (UNITID)"
+        puts "Enter the primary key (UNITID is used as primary key)"
         primary_key=gets
         if primary_key.strip! == nil
             pKey=primary_key

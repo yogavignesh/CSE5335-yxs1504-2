@@ -1,4 +1,4 @@
-# cs-yxs1504-2
+# CSE-yxs1504-2
 ### yxs1504
 
 TASK 6 : QUESTIONS
@@ -7,7 +7,10 @@ TASK 6 : QUESTIONS
 
 a. What is your external data source used to populate your Heroku data sources? 
 
-    I chose the data from http://www.data.gov/developers/apis. It is  a datasource about the universities in USA and their state information.Have chosen selective columns and top 300 records for the project.It is a csv file.
+    I chose the data from http://www.data.gov/developers/apis. 
+    It is  a datasource about the universities in USA and their state information.
+    Have chosen selective columns and top 300 records for the project.
+    It is a csv file.
     
 b. What are the Heroku toolbelt commands to execute the scripts? 
 

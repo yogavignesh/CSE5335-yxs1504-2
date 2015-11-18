@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
+#yxs1504
 require 'mongo'
 
+#retrieve data from mongo db using pk
 begin
 	client = Mongo::Client.new([ 'ds053794.mongolab.com:53794' ],:database =>'heroku_sbddk600',:user=>'heroku_sbddk600',:password=>'qlc03tq84elf3uptbsr49i1fi2');
-	puts "connected..."
+	puts "Successfully connected to Mongo db"
         puts "Enter the primary key (UNITID is used as primary key)"
         primary_key=gets
         if primary_key.strip! == nil
@@ -22,7 +24,7 @@ begin
 		end    
 	end
 	end            	
-        puts "data retrieved"        
+        puts "Data retrieved"        
 
 end
 

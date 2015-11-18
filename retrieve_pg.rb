@@ -1,18 +1,20 @@
 #!/usr/bin/env ruby
+#yxs1504
 
 require 'csv'
 require 'uri'
 require 'pg'
 
-
+#retrieve data using pk value from postgres
 uri = URI.parse('postgres://zhqqkzyehbvsah:1UtTG9XdHEvsaFFi602V2AKl63@ec2-107-21-219-235.compute-1.amazonaws.com:5432/dc72999lmnqk8')
 
 begin 
     connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)    
-    puts 'connected...'
+    tb_NAME='univs'
+    puts 'Successfully connected to Postgres db'
     puts "Enter the primary Key value (UNITID)"
     primary_key=gets
-    query_result= connection.exec("SELECT * from univs where UNITID='"+primary_key+"';");
+    query_result= connection.exec("SELECT * from "+tb_NAME+" where UNITID='"+primary_key+"';");
     if unless query_result.nil? or query_result == 0
 	    puts "The key results are :\n"
     	    puts "UNITID | OPEID | opeid6 | INSTNM | CITY | STABBR | INSTURL"

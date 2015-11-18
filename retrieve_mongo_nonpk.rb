@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
+#yxs1504
 require 'mongo'
-
+#retreive data from mongo db using non pk
 begin
 	client = Mongo::Client.new([ 'ds053794.mongolab.com:53794' ],:database =>'heroku_sbddk600',:user=>'heroku_sbddk600',:password=>'qlc03tq84elf3uptbsr49i1fi2');
-	puts "connected..."
+	puts "Successfully connected to Mongo db"
         puts "Enter the non primary key value (a.Statecode or b.CITY)"
         opt=gets
    	q_key="Birmingham"

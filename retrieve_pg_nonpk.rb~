@@ -1,18 +1,21 @@
 #!/usr/bin/env ruby
+#yxs1504
 
 require 'uri'
 require 'pg'
 
-
+#retrieve data from postgres using non pks
 uri = URI.parse('postgres://zhqqkzyehbvsah:1UtTG9XdHEvsaFFi602V2AKl63@ec2-107-21-219-235.compute-1.amazonaws.com:5432/dc72999lmnqk8')
 
 begin 
     connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)    
-    puts 'connected...'
+    puts 'Successfully connected to Postgres db'
+    #selected these two columns as they have repeated non unique values
     puts "Enter the non primary Key value (a.Statecode or b.CITY)"    
     opt=gets
     q_key="Birmingham"
-    col="CITY"   
+    col="CITY"   #default case
+    #case option on user input
     case opt.chomp
     when 'a'
          col="STABBR"

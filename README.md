@@ -1,4 +1,4 @@
-# CSE-yxs1504-2
+# Ruby Scripts for managing Postgres,MongoDb,Redis hosted in Heroku
 ### yxs1504
 
 TASK 6 : QUESTIONS
